@@ -6,10 +6,8 @@
 
 <script>
 export default {
-  name: 'TodayView'
+  name: 'TodayView',
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
