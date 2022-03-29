@@ -3,9 +3,9 @@
     <div
       v-for="day in daysInWeek"
       :key="day.id"
-      class="inline rounded-full text-xl mx-1.5"
+      class="inline rounded-full text-xl mx-1.5 cursor-pointer"
       :class="selectedDays.includes(day) ? 'text-blue-400' : 'text-gray-300'"
-      @click="toggleSelectedDay(day)"
+      @click="$emit('toggle-day', day)"
     >
       {{ firstLetter(day) }}
     </div>

@@ -8,7 +8,10 @@
     >
       <div>{{ habit.name }}</div>
       <div>
-        <DaySelector :selectedDays="habit.days" />
+        <DaySelector
+          :selectedDays="habit.days"
+          @toggle-day="(day) => $emit('toggle-habit-day', habit.name, day)"
+        />
         {{ habit.isEnabled }}
       </div>
     </div>
@@ -28,5 +31,3 @@ export default {
   },
 }
 </script>
-
-<style></style>

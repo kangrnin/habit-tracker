@@ -10,6 +10,7 @@ import Footer from './components/Footer.vue'
       <router-view
         class="nm-flat-slate-100-lg p-3 rounded-xl"
         :habits="habits"
+        @toggle-habit-day="toggleHabitDay"
       />
       <Footer />
     </div>
@@ -40,6 +41,23 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    toggleHabitDay(clickedHabitName, clickedDay) {
+      const clickedHabit = this.habits.find((x) => x.name == clickedHabitName)
+      if (clickedHabit.days.includes(clickedDay)) {
+        clickedHabit.days = clickedHabit.days.filter((x) => x != clickedDay)
+      } else {
+        clickedHabit.days.push(clickedDay)
+        clickedHabit.days = this.sortByDay(clickedHabit.days)
+      }
+      console.log(clickedHabitName, clickedDay)
+      console.log(clickedHabit.days)
+    },
+    sortByDay(days) {
+      const daysInWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      return days.sort((a, b) => daysInWeek.indexOf(a) > daysInWeek.indexOf(b))
+    },
   },
 }
 </script>
