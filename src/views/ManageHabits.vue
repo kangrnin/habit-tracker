@@ -8,7 +8,7 @@
     >
       <div>{{ habit.name }}</div>
       <div>
-        {{ habit.days }}
+        <DaySelector :selectedDays="habit.days" />
         {{ habit.isEnabled }}
       </div>
     </div>
@@ -16,8 +16,13 @@
 </template>
 
 <script>
+import DaySelector from '../components/DaySelector.vue'
+
 export default {
   name: 'Home',
+  components: {
+    DaySelector,
+  },
   props: {
     habits: Array,
   },
