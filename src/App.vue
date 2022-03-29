@@ -11,6 +11,7 @@ import Footer from './components/Footer.vue'
         class="nm-flat-slate-100-lg p-3 rounded-xl"
         :habits="habits"
         @toggle-habit-day="toggleHabitDay"
+        @toggle-habit-enabled="toggleHabitEnabled"
       />
       <Footer />
     </div>
@@ -57,6 +58,10 @@ export default {
     sortByDay(days) {
       const daysInWeek = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
       return days.sort((a, b) => daysInWeek.indexOf(a) > daysInWeek.indexOf(b))
+    },
+    toggleHabitEnabled(clickedHabitName) {
+      const clickedHabit = this.habits.find((x) => x.name == clickedHabitName)
+      clickedHabit.isEnabled = !clickedHabit.isEnabled
     },
   },
 }

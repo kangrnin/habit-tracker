@@ -12,7 +12,10 @@
           :selectedDays="habit.days"
           @toggle-day="(day) => $emit('toggle-habit-day', habit.name, day)"
         />
-        {{ habit.isEnabled }}
+        <CheckBox
+          :isChecked="habit.isEnabled"
+          @click="$emit('toggle-habit-enabled', habit.name)"
+        />
       </div>
     </div>
   </div>
@@ -20,11 +23,13 @@
 
 <script>
 import DaySelector from '../components/DaySelector.vue'
+import CheckBox from '../components/CheckBox.vue'
 
 export default {
   name: 'Home',
   components: {
     DaySelector,
+    CheckBox,
   },
   props: {
     habits: Array,
