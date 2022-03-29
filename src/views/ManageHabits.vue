@@ -6,7 +6,13 @@
       :key="habit.id"
       class="mt-2.5 nm-flat-slate-100 p-2 rounded flex justify-between"
     >
-      <div>{{ habit.name }}</div>
+      <div>
+        <input
+          type="text"
+          class="bg-transparent focus:outline-none"
+          v-model="habit.name"
+        />
+      </div>
       <div>
         <DaySelector
           :selectedDays="habit.days"
