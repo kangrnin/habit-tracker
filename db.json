@@ -1,0 +1,42 @@
+{
+  "habits": [
+    {
+      "name": "Workout at gym",
+      "days": ["Mon", "Wed", "Fri", "Sat", "Sun"],
+      "isEnabled": true,
+      "doneDates": [
+        "Thu Mar 24 2022",
+        "Fri Mar 25 2022",
+        "Sat Mar 26 2022",
+        "Mon Mar 28 2022",
+        "Tue Mar 29 2022",
+        "Wed Mar 30 2022"
+      ]
+    },
+    {
+      "name": "Daily journal",
+      "days": ["Mon", "Tue", "Wed", "Fri", "Sat", "Sun"],
+      "isEnabled": true,
+      "doneDates": [
+        "Fri Mar 25 2022",
+        "Sat Mar 26 2022",
+        "Mon Mar 28 2022",
+        "Tue Mar 29 2022"
+      ]
+    },
+    {
+      "name": "Study vue",
+      "days": ["Sat", "Sun"],
+      "isEnabled": true,
+      "doneDates": [
+        "Thu Mar 24 2022",
+        "Fri Mar 25 2022",
+        "Sat Mar 26 2022",
+        "Sun Mar 27 2022",
+        "Mon Mar 28 2022",
+        "Tue Mar 29 2022",
+        "Wed Mar 30 2022"
+      ]
+    }
+  ]
+}
