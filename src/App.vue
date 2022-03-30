@@ -8,7 +8,6 @@ import Footer from './components/Footer.vue'
     <div class="w-fit m-auto bg-slate">
       <Header />
       <router-view
-        class="nm-flat-slate-100-lg p-3 rounded-xl"
         :habits="habits"
         @toggle-habit-day="toggleHabitDay"
         @toggle-habit-enabled="toggleHabitEnabled"

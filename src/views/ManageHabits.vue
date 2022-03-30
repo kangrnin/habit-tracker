@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Habit List</h2>
+    <h2 class="text-xl">Habit List</h2>
     <div
       v-for="habit in habits"
       :key="habit.id"
