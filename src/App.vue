@@ -11,6 +11,7 @@ import Footer from './components/Footer.vue'
         :habits="habits"
         @toggle-habit-day="toggleHabitDay"
         @toggle-habit-enabled="toggleHabitEnabled"
+        @toggle-habit-done="toggleHabitDone"
       />
       <Footer />
     </div>
@@ -28,16 +29,19 @@ export default {
           name: 'Workout at gym',
           days: ['Mon', 'Wed', 'Fri', 'Sat', 'Sun'],
           isEnabled: true,
+          doneDates: [new Date().toDateString()],
         },
         {
           name: 'Daily journal',
           days: ['Mon', 'Tue', 'Wed', 'Fri', 'Sat', 'Sun'],
           isEnabled: true,
+          doneDates: [],
         },
         {
           name: 'Study vue',
           days: ['Sat', 'Sun'],
           isEnabled: false,
+          doneDates: [new Date().toDateString()],
         },
       ],
     }
@@ -61,6 +65,14 @@ export default {
     toggleHabitEnabled(clickedHabitName) {
       const clickedHabit = this.habits.find((x) => x.name == clickedHabitName)
       clickedHabit.isEnabled = !clickedHabit.isEnabled
+    },
+    toggleHabitDone(habit, date) {
+      if (habit.doneDates.includes(date)) {
+        habit.doneDates = habit.doneDates.filter((x) => x != date)
+      }
+      else {
+        habit.doneDates.push(date)
+      }
     },
   },
 }
