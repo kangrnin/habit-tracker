@@ -1,11 +1,11 @@
 <template>
   <div class="cursor-pointer">
     <i
-      class="text-xl fa fa-check-circle mr-1.5 transition-all ease-in"
+      class="fa fa-check-circle mr-1.5 text-xl transition-all ease-in"
       :class="checked ? 'text-blue-400' : 'text-gray-400'"
     ></i>
     <span
-      class="text-lg select-none transition-all ease-in"
+      class="select-none text-lg transition-all ease-in"
       :class="checked && 'text-gray-300 line-through'"
       >{{ name }}</span
     >

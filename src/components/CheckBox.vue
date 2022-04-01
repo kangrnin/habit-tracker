@@ -1,7 +1,7 @@
 <template>
   <div class="inline">
     <i
-      class="text-xl fa fa-check"
+      class="fa fa-check text-xl"
       :class="isChecked ? 'text-blue-400' : 'text-gray-300'"
     ></i>
   </div>

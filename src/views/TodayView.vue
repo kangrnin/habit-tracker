@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="text-xl mb-4">Habits for today</h2>
+    <h2 class="mb-4 text-xl">Habits for today</h2>
     <div>
       <CheckListItem
         v-for="habit in habits.filter((x) => x.days.includes(todayInWeek))"

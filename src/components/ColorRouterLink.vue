@@ -1,7 +1,7 @@
 <template>
   <router-link
     :to="to"
-    class="hover:text-blue-400 transition-all ease-in"
+    class="transition-all ease-in hover:text-blue-400"
     :class="$route.path == to ? 'text-blue-400' : 'text-gray-300'"
   >
     <slot></slot>

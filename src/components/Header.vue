@@ -1,6 +1,6 @@
 <template>
   <div class="mb-8 text-center">
-    <h2 class="text-2xl mb-6">Habit Tracker</h2>
+    <h2 class="mb-6 text-2xl">Habit Tracker</h2>
     <div>
       <ColorRouterLink to="/" class="mr-5">Home</ColorRouterLink>
       <ColorRouterLink to="/about" class="mr-5">About</ColorRouterLink>

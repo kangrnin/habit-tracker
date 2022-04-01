@@ -4,8 +4,8 @@ import Footer from './components/Footer.vue'
 </script>
 
 <template>
-  <div class="relative w-screen h-screen pt-14 bg-slate-100">
-    <div class="w-fit m-auto bg-slate">
+  <div class="relative h-screen w-screen bg-slate-100 pt-14">
+    <div class="bg-slate m-auto w-fit">
       <Header />
       <router-view
         :habits="habits"

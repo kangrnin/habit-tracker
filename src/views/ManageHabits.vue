@@ -4,18 +4,18 @@
     <div
       v-for="habit in habits"
       :key="habit.id"
-      class="mt-2.5 nm-flat-slate-100 p-2 rounded flex justify-between"
+      class="mt-2.5 flex justify-between rounded p-2 nm-flat-slate-100"
     >
-      <div>
+      <div class="w-fit">
         <input
           type="text"
-          class="bg-transparent focus:outline-none"
+          class="w-56 bg-transparent transition-all ease-in hover:nm-flat-slate-200 focus:outline-none focus:nm-flat-slate-200"
           v-model="habit.name"
         />
       </div>
-      <div>
+      <div class="w-fit">
         <DaySelector
-          :selectedDays="habit.days"
+          :selectedDays="habit.daysInWeek"
           @toggle-day="(day) => $emit('toggle-habit-day', habit.name, day)"
         />
         <CheckBox
