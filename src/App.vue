@@ -19,32 +19,19 @@ import Footer from './components/Footer.vue'
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: 'App',
   components: [Header, Footer],
   data() {
     return {
-      habits: [
-        {
-          name: 'Workout at gym',
-          days: ['Mon', 'Wed', 'Fri', 'Sat', 'Sun'],
-          isEnabled: true,
-          doneDates: [new Date().toDateString()],
-        },
-        {
-          name: 'Daily journal',
-          days: ['Mon', 'Tue', 'Wed', 'Fri', 'Sat', 'Sun'],
-          isEnabled: true,
-          doneDates: [],
-        },
-        {
-          name: 'Study vue',
-          days: ['Sat', 'Sun'],
-          isEnabled: false,
-          doneDates: [new Date().toDateString()],
-        },
-      ],
+      habits: [],
     }
+  },
+  async created() {
+    const response = await axios.get('/api/habits')
+    this.habits = response.data
   },
   methods: {
     toggleHabitDay(clickedHabitName, clickedDay) {
@@ -69,8 +56,7 @@ export default {
     toggleHabitDone(habit, date) {
       if (habit.doneDates.includes(date)) {
         habit.doneDates = habit.doneDates.filter((x) => x != date)
-      }
-      else {
+      } else {
         habit.doneDates.push(date)
       }
     },
